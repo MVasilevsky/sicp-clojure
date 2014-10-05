@@ -6,23 +6,13 @@
 
 (defn cdr [x] (x 2))
 
-(defn mkpoint [a b]
-  (cons a b))
+(def mkpoint cons)
+(def point-x car)
+(def point-y cdr)
 
-(defn point-x [p]
-  (car p))
-
-(defn point-y [p]
-  (cdr p))
-
-(defn mksegm [a b]
-  (cons a b))
-
-(defn segm-start [x]
-  (car x))
-
-(defn segm-end [x]
-  (cdr x))
+(def mksegm cons)
+(def segm-start car)
+(def segm-end cdr)
 
 (point-x (segm-end (mksegm (mkpoint 3 4)
                            (mkpoint 7 8))))
